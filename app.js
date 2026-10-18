@@ -20,29 +20,34 @@ function predictPeriod() {
 
     const today = new Date(todayInput + "T00:00:00");
     const lastPeriod = new Date(lastPeriodInput + "T00:00:00");
+    const oneDay = 1000 * 60 * 60 * 24;
 
     if (lastPeriod > today) {
         alert("Please input correct information.");
         return;
     }
 
+    const daysSinceLastPeriod = Math.floor((today - lastPeriod) / oneDay);
+
+    document.getElementById("result").style.display = "block";
+
+    if (daysSinceLastPeriod > cycleLength) {
+        document.getElementById("resultTitle").textContent = "Unpredictable";
+        document.getElementById("nextPeriod").textContent = "";
+        document.getElementById("daysLeft").textContent = "";
+        return;
+    }
+
     const nextPeriod = new Date(lastPeriod);
     nextPeriod.setDate(nextPeriod.getDate() + cycleLength);
 
-    const periodEnd = new Date(nextPeriod);
-    periodEnd.setDate(periodEnd.getDate() + periodLength - 1);
+    const daysLeft = Math.ceil((nextPeriod - today) / oneDay);
 
-    const oneDay = 1000 * 60 * 60 * 24;
-    const daysLeft = Math.max(0, Math.ceil((nextPeriod - today) / oneDay));
+    document.getElementById("resultTitle").textContent = "Your Prediction";
 
     document.getElementById("nextPeriod").textContent =
         "Next period: " + nextPeriod.toLocaleDateString();
 
-    document.getElementById("periodEnds").textContent =
-        "Your period should last about " + periodLength + " days.";
-
     document.getElementById("daysLeft").textContent =
         "Days until your next period: " + daysLeft;
-
-    document.getElementById("result").style.display = "block";
 }
