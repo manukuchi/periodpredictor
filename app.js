@@ -1,13 +1,11 @@
 function predictPeriod() {
-    const periodLength = Number(document.getElementById("periodLength").value);
+    
     const todayInput = document.getElementById("todayDate").value;
     const lastPeriodInput = document.getElementById("lastPeriod").value;
     const cycleLength = Number(document.getElementById("cycleLength").value);
 
     if (
-        !Number.isInteger(periodLength) ||
-        periodLength < 1 ||
-        periodLength > 14 ||
+
         !todayInput ||
         !lastPeriodInput ||
         !Number.isInteger(cycleLength) ||

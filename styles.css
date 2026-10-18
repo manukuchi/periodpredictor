@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     color: #5c2940;
-    margin: 1000px;
+    margin: 0px;
     padding: 40px 20px;
 }
 
@@ -24,13 +24,13 @@ h1 {
 label {
     display: block;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 40px;
 }
 
 input {
     width: 90%;
     padding: 10px;
-    margin-top: 7px;
+    margin-top: 15px;
     border: 2px solid #d96b98;
     border-radius: 10px;
 }
@@ -60,7 +60,7 @@ input {
 }
 
 button {
-    margin-top: 25px;
+    margin-top: 40px;
     padding: 12px 25px;
     background-color: #b83268;
     color: white;
