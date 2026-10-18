@@ -1,6 +1,6 @@
 function predictPeriod() {
     const periodLength = Number(document.getElementById("periodLength").value);
-    const todayDay = Number(document.getElementById("todayDay").value);
+    const todayInput = document.getElementById("todayDate").value.trim();
     const lastPeriodInput = document.getElementById("lastPeriod").value;
     const cycleLength = Number(document.getElementById("cycleLength").value);
 
@@ -9,8 +9,10 @@ function predictPeriod() {
         return;
     }
 
-    if (!Number.isInteger(todayDay) || todayDay < 1 || todayDay > 31) {
-        alert("Please enter a day from 1 to 31.");
+    const today = new Date(todayInput + " " + new Date().getFullYear());
+
+    if (isNaN(today.getTime())) {
+        alert("Please enter today's date like October 16.");
         return;
     }
 
@@ -25,8 +27,6 @@ function predictPeriod() {
     }
 
     const lastPeriod = new Date(lastPeriodInput + "T00:00:00");
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
 
     const nextPeriod = new Date(lastPeriod);
     nextPeriod.setDate(nextPeriod.getDate() + cycleLength);
