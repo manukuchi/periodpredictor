@@ -39,14 +39,12 @@ input {
     position: relative;
     color: #c98ca4;
     cursor: pointer;
-    font-size: 15px;
 }
 
 .info-text {
     visibility: hidden;
     width: 220px;
-    background-color: white;
-    color: #5c2940;
+    background: white;
     border: 1px solid #d96b98;
     border-radius: 8px;
     padding: 8px;
@@ -71,10 +69,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #92264f;
-}
-
 .result {
     display: none;
     background-color: white;
@@ -83,8 +77,4 @@ button:hover {
     padding: 20px;
     max-width: 500px;
     margin: 25px auto;
-}
-
-.result h2 {
-    color: #b83268;
 }

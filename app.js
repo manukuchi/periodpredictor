@@ -1,32 +1,30 @@
 function predictPeriod() {
     const periodLength = Number(document.getElementById("periodLength").value);
-    const todayInput = document.getElementById("todayDate").value.trim();
+    const todayInput = document.getElementById("todayDate").value;
     const lastPeriodInput = document.getElementById("lastPeriod").value;
     const cycleLength = Number(document.getElementById("cycleLength").value);
 
-    if (!Number.isInteger(periodLength) || periodLength < 1 || periodLength > 14) {
-        alert("Please enter another input or contact medical help.");
+    if (
+        !Number.isInteger(periodLength) ||
+        periodLength < 1 ||
+        periodLength > 14 ||
+        !todayInput ||
+        !lastPeriodInput ||
+        !Number.isInteger(cycleLength) ||
+        cycleLength < 1 ||
+        cycleLength > 100
+    ) {
+        alert("Please input correct information.");
         return;
     }
 
-    const today = new Date(todayInput + " " + new Date().getFullYear());
-
-    if (isNaN(today.getTime())) {
-        alert("Please enter today's date like October 16.");
-        return;
-    }
-
-    if (!lastPeriodInput) {
-        alert("Please enter when your last period started.");
-        return;
-    }
-
-    if (!Number.isInteger(cycleLength) || cycleLength < 1 || cycleLength > 100) {
-        alert("Please enter a menstrual cycle length from 1 to 100 days.");
-        return;
-    }
-
+    const today = new Date(todayInput + "T00:00:00");
     const lastPeriod = new Date(lastPeriodInput + "T00:00:00");
+
+    if (lastPeriod > today) {
+        alert("Please input correct information.");
+        return;
+    }
 
     const nextPeriod = new Date(lastPeriod);
     nextPeriod.setDate(nextPeriod.getDate() + cycleLength);
