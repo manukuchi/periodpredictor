@@ -1,0 +1,1 @@
+Many individuals struggle with tracking their menstrual cycle as well keeping track of when their next period might start. With our project, we allow the user to find out the solution to this problem in a quick and efficient way.
