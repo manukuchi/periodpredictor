@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Period Predictor</title>
+
+    <!-- Connects the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>The Period Predictor</h1>
+
+    <div class="period-table">
+
+        <label>How long is your average period?</label>
+        <input type="number" id="periodLength" placeholder="Example: 5">
+
+        <label>What day of the month is it today?</label>
+        <input type="number" id="todayDay" min="1" max="31" placeholder="Example: 18">
+
+        <label>When did your last period start?</label>
+        <input type="date" id="lastPeriod">
+
+        <label>How long is your menstrual cycle typically?</label>
+        <input type="number" id="cycleLength" placeholder="Example: 28">
+
+        <button onclick="predictPeriod()">Predict My Period</button>
+
+    </div>
+
+    <!-- Results appear here -->
+    <div id="result" class="result">
+        <h2>Your Prediction</h2>
+        <p id="nextPeriod"></p>
+        <p id="periodEnds"></p>
+        <p id="daysLeft"></p>
+
+        <p>Cycle Progress</p>
+
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <p id="progressText"></p>
+    </div>
+
+    <!-- Connects the JavaScript file -->
+    <script src="app.js"></script>
+
+</body>
+</html>
