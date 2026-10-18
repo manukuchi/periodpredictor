@@ -1,6 +1,6 @@
 body {
     background-color: #ffe6ee;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, times;
     text-align: center;
     color: #5c2940;
     margin: 0px;
@@ -16,7 +16,7 @@ h1 {
     background-color: white;
     border: 3px solid #b83268;
     border-radius: 20px;
-    padding: 25px;
+    padding: 20px;
     max-width: 500px;
     margin: auto;
 }
@@ -60,12 +60,14 @@ input {
 }
 
 button {
-    margin-top: 40px;
-    padding: 12px 25px;
+    font-family: Georgia;
+    margin-top: 60px;
+    padding: 22px 60px;
     background-color: #b83268;
     color: white;
     border: none;
-    border-radius: 10px;
+    font-size: 20px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
