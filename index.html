@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Period Predictor</title>
-
-    <!-- Connects the CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,39 +13,45 @@
 
     <div class="period-table">
 
-        <label>How long is your average period?</label>
-        <input type="number" id="periodLength" placeholder="Example: 5">
+        <label>
+            How long is your average period?
+            <span class="info">
+                ⓘ
+                <span class="info-text">
+                    Enter the usual number of days you bleed during your period.
+                </span>
+            </span>
+        </label>
+        <input type="number" id="periodLength" min="1" max="14" step="1" placeholder="Example: 5">
 
-        <label>What day of the month is it today?</label>
-        <input type="number" id="todayDay" min="1" max="31" placeholder="Example: 18">
+        <label>What day is it today?</label>
+        <input type="number" id="todayDay" min="1" max="31" step="1" placeholder="Example: 18">
 
         <label>When did your last period start?</label>
         <input type="date" id="lastPeriod">
 
-        <label>How long is your menstrual cycle typically?</label>
-        <input type="number" id="cycleLength" placeholder="Example: 28">
+        <label>
+            How long is your menstrual cycle typically?
+            <span class="info">
+                ⓘ
+                <span class="info-text">
+                    Your menstrual cycle is the number of days from the first day of one period to the first day of your next period.
+                </span>
+            </span>
+        </label>
+        <input type="number" id="cycleLength" min="1" max="100" step="1" placeholder="Example: 28">
 
         <button onclick="predictPeriod()">Predict My Period</button>
 
     </div>
 
-    <!-- Results appear here -->
     <div id="result" class="result">
         <h2>Your Prediction</h2>
         <p id="nextPeriod"></p>
         <p id="periodEnds"></p>
         <p id="daysLeft"></p>
-
-        <p>Cycle Progress</p>
-
-        <div class="progress-bar">
-            <div id="progress"></div>
-        </div>
-
-        <p id="progressText"></p>
     </div>
 
-    <!-- Connects the JavaScript file -->
     <script src="app.js"></script>
 
 </body>
