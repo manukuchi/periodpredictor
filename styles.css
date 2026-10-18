@@ -1,0 +1,81 @@
+/* Page design */
+body {
+    background-color: #ffe6ee;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #5c2940;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+h1 {
+    color: #b83268;
+    font-size: 42px;
+}
+
+/* Question box */
+.period-table {
+    background-color: white;
+    border: 3px solid #b83268;
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 7px;
+    border: 2px solid #d96b98;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #b83268;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #92264f;
+}
+
+/* Results box */
+.result {
+    display: none;
+    background-color: white;
+    border: 3px solid #b83268;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.result h2 {
+    color: #b83268;
+}
+
+/* Cycle progress bar */
+.progress-bar {
+    background-color: #f5bfd2;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background-color: #b83268;
+}
